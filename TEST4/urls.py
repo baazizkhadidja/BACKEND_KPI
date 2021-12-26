@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from application.api import all_inv_api, inv_detail_api
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/investissements/', all_inv_api, name = 'allinv'),
+    path('api/investissement/<int:id>', inv_detail_api, name = 'inv_detail_api'),
 ]
