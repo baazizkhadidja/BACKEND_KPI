@@ -1,0 +1,25 @@
+[
+  {
+  "model": "application.investissement",
+  "pk": 2,
+  "fields": {
+    "titreoperation": "Ravalement des façades, mise en conformité des ateliers et création foyer des élèves",
+    "entreprise": "Coulon SA",
+    "annee_de_livraison": "2006",
+    "ville": "Paris 12ème",
+    "mandataire": "SEMAEST",
+    "ppi": "2001/2006",
+    "lycee": "Métiers-de-l'ameublement",
+    "notification_du_marche": "2002-10-28",
+    "codeuai": "0750784V",
+    "longitude": 2.391504327000064,
+    "etat_d_avancement": "Opération livrée",
+    "montant_des_ap_votes_en_meu": 1,
+    "cao_attribution": "2005-10-02",
+    "latitude": 48.84675373500005,
+    "maitrise_d_oeuvre": "Laumonnier Menninger / SLI",
+    "mode_de_devolution": "Ent générale",
+    "annee_d_individualisation": "1998",
+    "enveloppe_prev_en_meu": 0.43
+  }}
+]
