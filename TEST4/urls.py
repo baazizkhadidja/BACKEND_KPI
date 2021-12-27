@@ -14,13 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from application.api import all_inv_api, inv_detail_api
+from django.db import router
+from django.urls import path, include
+from application.api import all_inv_api, inv_detail_api, All_inv_api_filter_vset
+from rest_framework import routers
 
 
-
+router = routers.DefaultRouter()
+router.register('investissement_filter', All_inv_api_filter_vset, basename='investissement_filter')
+urlpatterns = router.urls
+ 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/investissements/', all_inv_api, name = 'allinv'),
+    path('api/investissements/', all_inv_api, name = 'all_inv_api'),
     path('api/investissement/<int:id>', inv_detail_api, name = 'inv_detail_api'),
+    path('', include(router.urls))   
 ]
