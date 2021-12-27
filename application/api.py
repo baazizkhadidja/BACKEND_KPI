@@ -19,16 +19,11 @@ class All_inv_api_filter_vset(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         params = kwargs
         print(params['pk'])
-        invests = Investissement.objects.filter(ville=params['pk'])
+        params_list = params['pk'].split('-')
+        invests = Investissement.objects.filter(
+            ville=params_list[0], etat_d_avancement=params_list[1])
         serializer = InvSerializer(invests, many=True)
         return Response(serializer.data)
-
-
-
-
-
-
-
 
 
 
