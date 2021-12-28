@@ -26,6 +26,7 @@ urlpatterns = router.urls
  
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
     path('api/investissements/', all_inv_api, name = 'all_inv_api'),
     path('api/investissement/<int:id>', inv_detail_api, name = 'inv_detail_api'),
     path('', include(router.urls))   
