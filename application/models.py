@@ -1,9 +1,11 @@
+""" This module contains the investisment class """
 from django.db import models
 from django.utils.translation import gettext as _
 # Create your models here.
 
 class Investissement(models.Model):
-    titreoperation = models.CharField(_('titre operation'), max_length=200, null=True)   
+    """ This class contains the essential fields for the investisment model """
+    titreoperation = models.CharField(_('titre operation'), max_length=200, null=True)
     entreprise = models.CharField(_('entreprise'), max_length=200, null=True)
     annee_de_livraison  = models.CharField(_('annee de livraison'), max_length=200, null=True)
     ville = models.CharField(_('ville'), max_length=200, null=True)
@@ -19,7 +21,7 @@ class Investissement(models.Model):
     latitude = models.FloatField(_('latitude'), null=True)
     maitrise_d_oeuvre = models.CharField(_('maitrise_d_oeuvre'), max_length=200, null=True)
     mode_de_devolution = models.CharField(_('mode_de_devolution'), max_length=200, null=True)
-    annee_d_individualisation = models.CharField(_('annee_d_individualisation'), max_length=200, null=True)
+    annee_d_individualisation = models.CharField(_('annee_d_indivi'), max_length=200, null=True)
     enveloppe_prev_en_meu = models.FloatField(_('enveloppe prev en meu'), null=True)
     nombre_de_lots = models.IntegerField(_('nombre_de_lots'), null=True)
     
