@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.db import router
 from django.urls import path, include
-from application.api import all_inv_api, inv_detail_api, All_inv_api_filter_vset
+from application.api import all_inv_api, inv_detail_api, All_inv_api_filter_vset, InvAPIView
 from rest_framework import routers
 
 
@@ -29,5 +29,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/investissements/', all_inv_api, name = 'all_inv_api'),
     path('api/investissement/<int:id>', inv_detail_api, name = 'inv_detail_api'),
-    path('', include(router.urls))   
+    path('', include(router.urls)),
+    path('apiview/investissements', InvAPIView.as_view())   
 ]

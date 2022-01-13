@@ -1,4 +1,5 @@
 """ This module contains the apis """
+from rest_framework.views import APIView
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -45,3 +46,14 @@ def inv_detail_api(request, id):
     inv_detail = Investissement.objects.get(id = id)
     data = InvSerializer(inv_detail).data
     return Response({'data': data})
+
+
+
+#METHODE 03 Using APIView to create API
+class InvAPIView(APIView):
+
+    def get(self, *args, **kwargs):
+        """  This function lists all the investments 'METHODE 03': using APIView"""
+        investissements = Investissement.objects.all()
+        serializer = InvSerializer(investissements, many = True)
+        return Response(serializer.data)
